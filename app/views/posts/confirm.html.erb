@@ -1,2 +1,7 @@
-<h1>Posts#confirm</h1>
-<p>Find me in app/views/posts/confirm.html.erb</p>
+<h3>内容確認</h3>
+<%= form_with(model: @post, local: true) do |form| %>
+  <%= form.hidden_field :content %>
+  <p>内容:<%= @post.content %></p>
+  <%= form.submit  "登録する" %>
+  <%= form.submit "戻る", name: 'back' %>
+<% end %>
